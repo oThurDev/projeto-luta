@@ -4,7 +4,7 @@
     gap: 20px;
 }
 
-#person, #monster {
+#char, #monster {
     flex: 1;
 }
 
