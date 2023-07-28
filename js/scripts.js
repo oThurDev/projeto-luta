@@ -1,14 +1,9 @@
-let char = new Knight('Arthur')
-let monster = new Sorcerer('Bruno')
+const player1 = createKnight('Thur')
+const player2 = createSorcerer('Brunex')
 
-let log = new Log(document.querySelector('.log'))
-
-const stage = new Stage (
-    char,
-    monster,
-    document.querySelector('#char'),
-    document.querySelector('#monster'),
-    log
+stage.startGame(
+    player1,
+    player2,
+    document.querySelector('#player1'),
+    document.querySelector('#player2'),
 )
-
-stage.startGame();
