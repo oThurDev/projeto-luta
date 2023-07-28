@@ -73,17 +73,36 @@ const stage = {
 
     update() {
         //fighter1
-        this.fighter1El.querySelector('.name').innerHTML = `${this.fighter1.name} - ${this.fighter1.life} HP`
+        this.fighter1El.querySelector('.name').innerHTML = `${this.fighter1.name} - ${this.fighter1.life.toFixed(2)} HP`
         let player1LifeBar = (this.fighter1.life / this.fighter1.maxLife) * 100;
         this.fighter1El.querySelector('.life').style.width = `${player1LifeBar}%`
 
         //fighter2
-        this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life} HP`
+        this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life.toFixed(2)} HP`
         let player2LifeBar = (this.fighter2.life / this.fighter2.maxLife) * 100;
         this.fighter2El.querySelector('.life').style.width = `${player2LifeBar}%`
     },
 
     doAttack(attacking, attacked) {
+        if (attacking.life < 0 || attacked < 0) {
+            console.log("Alguem esta morto, não pode atacar")
+            return;
+        }
+
+        const attackFactor = (Math.random() * 2).toFixed(2)
+        const defenseFactor = (Math.random() * 2).toFixed(2)
+
+        const actualAttack = attacking.attack * attackFactor;
+        const actualDefense = attacked.defense * defenseFactor;
+
+        if (actualAttack > actualDefense) {
+            attacked.life -= actualAttack;
+            attacked.life = attacked.life < 0 ? 0 : attacked.life;
+            console.log(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`)
+        } else {
+            console.log(`${attacked.name} conseguiu defender`)
+        }
+
         this.update();
     }
 }
