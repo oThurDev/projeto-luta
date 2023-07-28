@@ -4,7 +4,7 @@
     gap: 20px;
 }
 
-#char, #monster {
+#player1, #player2 {
     flex: 1;
 }
 
