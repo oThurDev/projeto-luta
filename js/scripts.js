@@ -1,5 +1,5 @@
-const player1 = createKnight('Thur')
-const player2 = createSorcerer('Brunex')
+const player1 = createKnight("Cavalheiro")
+const player2 = createBigMonster()
 
 stage.startGame(
     player1,
