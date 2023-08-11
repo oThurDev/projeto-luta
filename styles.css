@@ -1,3 +1,13 @@
+* {
+    font-family: 'Banger', cursive;
+}
+
+body {
+    background-color: black;
+    color: #fff;
+    font-size: 18px;
+}
+
 .fight-area{
     display: flex;
     flex-direction: row;
@@ -6,6 +16,33 @@
 
 #player1, #player2 {
     flex: 1;
+}
+
+.player1Img, .player2Img {
+    border: 2px solid blue;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+
+    > img {
+        width: calc(100% - 50px);
+    }
+}
+
+.player1Img {
+    > .sorcerer, .little-monster, .big-monster {
+        display: none;
+    }
+}
+
+.player2Img {
+    > .knight, .sorcerer, .little-monster {
+        display: none;
+    }
 }
 
 .life-bar {
@@ -21,7 +58,27 @@
 }
 
 .log {
-    border: 1px dotted #999;
-    height: 200px;
+    border: 5px solid blue;
+    height: 300px;
     overflow-y: scroll;
+    border-radius: 20px 0 0 20px;
+}
+
+.attack-button {
+    display: flex;
+    border: 1px solid blue;
+    padding: 10px;
+    width: 100px;
+    font-size: 18px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s linear;
+}
+
+.attack-button:hover {
+    background-color: blue;
+    box-shadow: 0 0 30px blue;
 }
