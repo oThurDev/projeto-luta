@@ -1,5 +1,5 @@
 const player1 = createKnight("Cavalheiro")
-const player2 = createBigMonster()
+const player2 = createLittleMonster()
 
 stage.startGame(
     player1,
